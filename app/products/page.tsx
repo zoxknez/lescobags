@@ -13,7 +13,7 @@ export default function ProductsPage() {
       subtitle: 'Flexible Intermediate Bulk Containers',
       description: 'Perfect packaging solution to store and transport dry bulk goods. Custom-made for every sector.',
       image: '/images/products/big-bags.jpg',
-      gradient: 'from-blue-600 to-cyan-500',
+      gradient: 'from-blue-700 to-blue-600',
       features: ['Capacity: 500-2000 kg', '4-loop, 2-loop, Quadro designs', 'Food-safe certified', 'Custom printing available'],
       link: '/products/big-bags'
     },
@@ -23,7 +23,7 @@ export default function ProductsPage() {
       subtitle: 'Advanced Cassette Bags',
       description: 'The most advanced type of small bags with flat bottom for hassle-free filling and stacking.',
       image: '/images/products/block-bottom-bags.jpg',
-      gradient: 'from-green-600 to-emerald-500',
+      gradient: 'from-teal-700 to-teal-600',
       features: ['Flat bottom design', 'Easy stacking', 'With valve or open mouth', 'Dimensions: 30-60cm width'],
       link: '/products/block-bottom-bags'
     },
@@ -33,7 +33,7 @@ export default function ProductsPage() {
       subtitle: 'Versatile Standard Packaging',
       description: 'Most versatile packaging for bulk goods up to 100 kg. Easy to transport, stack and fill.',
       image: '/images/products/pillow-bags.jpg',
-      gradient: 'from-purple-600 to-pink-500',
+      gradient: 'from-emerald-700 to-emerald-600',
       features: ['Up to 100 kg capacity', 'Woven plastic or natural jute', 'Custom printing', 'Multiple sizes available'],
       link: '/products/pillow-bags'
     },
@@ -43,7 +43,7 @@ export default function ProductsPage() {
       subtitle: 'Hygienic Bulk Transport',
       description: 'Convert a sea container into a hygienic bulk container with our specialized liner systems.',
       image: '/images/products/container-liners.jpg',
-      gradient: 'from-orange-600 to-red-500',
+      gradient: 'from-slate-700 to-slate-600',
       features: ['20 & 40-foot containers', 'Food-safe materials', 'Custom filling systems', 'Dust & moisture protection'],
       link: '/products/container-liners'
     }
@@ -55,7 +55,7 @@ export default function ProductsPage() {
       description: 'Sustainable packaging made from recycled polypropylene (40-100% rPP)',
       icon: '♻️',
       link: '/products/recycled-bags',
-      color: 'bg-green-50 border-green-200'
+      color: 'bg-teal-50 border-teal-200'
     },
     {
       title: 'Special Usage',
@@ -69,14 +69,14 @@ export default function ProductsPage() {
       description: 'U-panel, 4-panel, Tubular, Quadro, Conical, and Combo-cube designs',
       icon: '🎨',
       link: '/products/custom-design',
-      color: 'bg-purple-50 border-purple-200'
+      color: 'bg-slate-50 border-slate-200'
     },
     {
       title: 'Industries',
       description: 'Specialized solutions for 8 different industries and sectors',
       icon: '🏭',
       link: '/products/industries',
-      color: 'bg-orange-50 border-orange-200'
+      color: 'bg-emerald-50 border-emerald-200'
     }
   ]
 
@@ -85,7 +85,7 @@ export default function ProductsPage() {
       <Navigation />
       <main className="min-h-screen bg-white pt-24 overflow-hidden">
         {/* Header */}
-        <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+        <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         {/* Animated Background Elements */}
         <motion.div 
           className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
@@ -100,7 +100,7 @@ export default function ProductsPage() {
           }}
         />
         <motion.div 
-          className="absolute bottom-10 left-10 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -117,7 +117,7 @@ export default function ProductsPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full text-sm font-semibold mb-8 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-full text-sm font-semibold mb-8 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -131,7 +131,7 @@ export default function ProductsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-slate-800 via-blue-900 to-teal-700 bg-clip-text text-transparent">
               Our Products
             </span>
           </motion.h1>
@@ -148,44 +148,6 @@ export default function ProductsPage() {
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Best-in-the-class Market Value
             </p>
-            
-            {/* Stats or Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12"
-            >
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">ISO Certified</h3>
-                <p className="text-sm text-gray-600">Quality Management System</p>
-              </div>
-
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">Sustainable</h3>
-                <p className="text-sm text-gray-600">Recycled Materials Available</p>
-              </div>
-
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">Custom Made</h3>
-                <p className="text-sm text-gray-600">Tailored to Your Needs</p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -326,50 +327,74 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.div variants={fadeInUp}>
-              <div className="bg-white rounded-2xl shadow-xl p-10 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group">
+              <div 
+                onClick={() => setSelectedCertificate('iso-9001')}
+                className="bg-white rounded-2xl shadow-xl p-10 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group cursor-pointer"
+              >
                 <motion.div 
-                  className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                  className="relative w-32 h-32 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ rotate: [0, -5, 5, -5, 0] }}
                   transition={{ duration: 0.5 }}
                 >
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+                  <Image
+                    src="https://lescobags.com/images/certificate-iso-9001.png"
+                    alt="ISO 9001:2008"
+                    fill
+                    className="object-contain"
+                    sizes="128px"
+                  />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">ISO 9001:2008</h3>
                 <p className="text-gray-600">Quality Management System</p>
+                <p className="text-sm text-blue-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
               </div>
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <div className="bg-white rounded-2xl shadow-xl p-10 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group">
+              <div 
+                onClick={() => setSelectedCertificate('iso-14001')}
+                className="bg-white rounded-2xl shadow-xl p-10 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group cursor-pointer"
+              >
                 <motion.div 
-                  className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                  className="relative w-32 h-32 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ rotate: [0, -5, 5, -5, 0] }}
                   transition={{ duration: 0.5 }}
                 >
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <Image
+                    src="https://lescobags.com/images/certificare-iso-14001.png"
+                    alt="ISO 14001:2004"
+                    fill
+                    className="object-contain"
+                    sizes="128px"
+                  />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">ISO 14001:2004</h3>
                 <p className="text-gray-600">Environmental Management</p>
+                <p className="text-sm text-green-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
               </div>
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <div className="bg-white rounded-2xl shadow-xl p-10 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group">
+              <div 
+                onClick={() => setSelectedCertificate('haccp')}
+                className="bg-white rounded-2xl shadow-xl p-10 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group cursor-pointer"
+              >
                 <motion.div 
-                  className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                  className="relative w-32 h-32 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ rotate: [0, -5, 5, -5, 0] }}
                   transition={{ duration: 0.5 }}
                 >
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                  </svg>
+                  <Image
+                    src="https://lescobags.com/images/certificate-haacp.png"
+                    alt="HACCP"
+                    fill
+                    className="object-contain"
+                    sizes="128px"
+                  />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">HACCP</h3>
                 <p className="text-gray-600">Food Safety Management</p>
+                <p className="text-sm text-purple-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
               </div>
             </motion.div>
           </motion.div>
@@ -612,6 +637,63 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={() => setSelectedCertificate(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedCertificate(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+            >
+              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={
+                  selectedCertificate === 'iso-9001' 
+                    ? '/images/certificates/certificate-iso-9001.png'
+                    : selectedCertificate === 'iso-14001'
+                    ? '/images/certificates/certificare-iso-14001.png'
+                    : '/images/certificates/certificate-haacp.png'
+                }
+                alt={
+                  selectedCertificate === 'iso-9001' 
+                    ? 'ISO 9001:2008 Certificate'
+                    : selectedCertificate === 'iso-14001'
+                    ? 'ISO 14001:2004 Certificate'
+                    : 'HACCP Certificate'
+                }
+                fill
+                className="object-contain p-8"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            </div>
+
+            <div className="p-6 bg-gray-50 text-center">
+              <p className="text-sm text-gray-600">
+                Click outside or press the X button to close
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </main>
   )
 }
