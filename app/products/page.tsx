@@ -85,7 +85,7 @@ export default function ProductsPage() {
       <Navigation />
       <main className="min-h-screen bg-white pt-24 overflow-hidden">
         {/* Header */}
-      <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+        <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
         {/* Animated Background Elements */}
         <motion.div 
           className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
