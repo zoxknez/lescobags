@@ -156,7 +156,9 @@ export default function ProductsPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Big Bags (FIBC)</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Big Bags (FIBC)</span>
+              </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Used for the carrying and storage of dry non-hazardous materials in powder, flake and 
                 granular form. These large capacity bags are robust, versatile and an economical alternative 
@@ -236,173 +238,33 @@ export default function ProductsPage() {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl">
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Customization Options</h3>
                 <p className="text-gray-700 text-sm">Personalized printing, adapted liners, recycled materials, and custom dimensions available</p>
               </div>
+
+              <div className="flex gap-3">
+                <Link href="/products/big-bags" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    View All Types
+                  </motion.button>
+                </Link>
+                <Link href="/contact" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300"
+                  >
+                    Request Quote
+                  </motion.button>
+                </Link>
+              </div>
             </motion.div>
           </div>
-
-          {/* Big Bags Variants */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mb-20"
-          >
-            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-6 rounded-t-2xl">
-              <h3 className="text-2xl md:text-3xl font-bold">Big Bags</h3>
-              <p className="text-white/90 mt-2">Available Variants & Options</p>
-            </div>
-            <div className="bg-white rounded-b-2xl shadow-lg p-6">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/big-bags#4-loop" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-blue-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">4-Loop Big Bags</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Standard model with four lifting loops</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/big-bags#one-two-loop" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-blue-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">One/Two-Loop Big Bags</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Simple handling, quick filling</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/big-bags#quadro" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-blue-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">Quadro Big Bags</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">With internal baffles for shape stability</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/big-bags#u-panel" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-blue-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">U-Panel Design</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">One continuous piece forming U-shape</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/big-bags#4-panel" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-blue-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">4-Panel Design</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Four separate panels sewn together</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/big-bags#tubular" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-blue-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">Tubular Design</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Seamless cylindrical construction</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
 
           {/* Baffle Bags */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -413,7 +275,9 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
               className="order-2 lg:order-1"
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Block Bottom Bags</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">Block Bottom Bags</span>
+              </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Block bottom bags feature a flat bottom that enables stable standing, making them ideal for 
                 storage and product display. These bags maintain their shape better than standard bags and 
@@ -459,9 +323,30 @@ export default function ProductsPage() {
                 </motion.div>
               </div>
 
-              <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl">
+              <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Perfect For</h3>
                 <p className="text-gray-700 text-sm">Retail display, organized storage, and industries requiring stable packaging solutions</p>
+              </div>
+
+              <div className="flex gap-3">
+                <Link href="/products/block-bottom-bags" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    View All Types
+                  </motion.button>
+                </Link>
+                <Link href="/contact" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-white border-2 border-green-600 text-green-600 rounded-xl font-semibold hover:bg-green-50 transition-all duration-300"
+                  >
+                    Request Quote
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
             
@@ -483,71 +368,6 @@ export default function ProductsPage() {
               </div>
             </motion.div>
           </div>
-
-          {/* Block Bottom Bags Variants */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mb-20"
-          >
-            <div className="bg-gradient-to-r from-green-600 to-emerald-500 text-white p-6 rounded-t-2xl">
-              <h3 className="text-2xl md:text-3xl font-bold">Block Bottom Bags</h3>
-              <p className="text-white/90 mt-2">Available Variants & Options</p>
-            </div>
-            <div className="bg-white rounded-b-2xl shadow-lg p-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/block-bottom-bags#open-mouth" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-green-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-green-600 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-green-600 transition-colors">Open Mouth Bags</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Wide opening for easy filling</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-green-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/block-bottom-bags#valve" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-green-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-green-600 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-green-600 transition-colors">Valve Bags</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Self-closing valve system</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-green-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
 
           {/* Conductive Bags */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -574,7 +394,9 @@ export default function ProductsPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Pillow Bags</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Pillow Bags</span>
+              </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Versatile bags suitable for a wide range of products, including dry materials and powders. 
                 These bags can be adapted in terms of material and dimensions, with options for personalized printing.
@@ -618,77 +440,33 @@ export default function ProductsPage() {
                 </motion.div>
               </div>
 
-              <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-xl">
+              <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Ideal For</h3>
                 <p className="text-gray-700 text-sm">Dry materials, powders, and products requiring flexible packaging solutions</p>
               </div>
+
+              <div className="flex gap-3">
+                <Link href="/products/pillow-bags" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    View All Types
+                  </motion.button>
+                </Link>
+                <Link href="/contact" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-300"
+                  >
+                    Request Quote
+                  </motion.button>
+                </Link>
+              </div>
             </motion.div>
           </div>
-
-          {/* Pillow Bags Variants */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mb-20"
-          >
-            <div className="bg-gradient-to-r from-purple-600 to-pink-500 text-white p-6 rounded-t-2xl">
-              <h3 className="text-2xl md:text-3xl font-bold">Pillow Bags</h3>
-              <p className="text-white/90 mt-2">Available Variants & Options</p>
-            </div>
-            <div className="bg-white rounded-b-2xl shadow-lg p-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/pillow-bags#wpp" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-purple-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">Woven Plastic Bags (WPP)</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Durable polypropylene construction</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-purple-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/pillow-bags#jute" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-purple-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">Jute Bags</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">Natural, eco-friendly material</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-purple-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
 
           {/* Food Grade Bags */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -699,7 +477,9 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
               className="order-2 lg:order-1"
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Container Liners</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">Container Liners</span>
+              </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Container liners provide additional protection for your products during transport in containers, 
                 protecting them from moisture, contamination, and other external factors. These liners can be 
@@ -760,9 +540,30 @@ export default function ProductsPage() {
                 </motion.div>
               </motion.div>
 
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl">
+              <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Perfect For</h3>
                 <p className="text-gray-700 text-sm">Long-distance shipping, sensitive products, and international container transport</p>
+              </div>
+
+              <div className="flex gap-3">
+                <Link href="/products/container-liners" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-orange-600 to-red-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    View All Types
+                  </motion.button>
+                </Link>
+                <Link href="/contact" className="flex-1">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-white border-2 border-orange-600 text-orange-600 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-300"
+                  >
+                    Request Quote
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
             
@@ -784,71 +585,6 @@ export default function ProductsPage() {
               </div>
             </motion.div>
           </div>
-
-          {/* Container Liners Variants */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mt-20"
-          >
-            <div className="bg-gradient-to-r from-orange-600 to-red-500 text-white p-6 rounded-t-2xl">
-              <h3 className="text-2xl md:text-3xl font-bold">Container Liners</h3>
-              <p className="text-white/90 mt-2">Available Variants & Options</p>
-            </div>
-            <div className="bg-white rounded-b-2xl shadow-lg p-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/container-liners#20ft" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-orange-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-orange-600 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">20-Foot Liners</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">For standard 20ft containers</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-orange-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.03, y: -5 }} transition={{ duration: 0.3 }}>
-                  <Link href="/products/container-liners#40ft" className="block group">
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 h-full hover:border-orange-400 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-orange-600 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">40-Foot Liners</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">For 40ft containers</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-orange-600 text-sm font-semibold mt-4">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
 
           {/* Recycled Bags */}
           <section className="mt-20">
