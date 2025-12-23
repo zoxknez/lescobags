@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Navigation from '../components/Navigation'
 
 export default function OrganisationPage() {
   const fadeInUp = {
@@ -19,9 +20,11 @@ export default function OrganisationPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-white pt-24 overflow-hidden">
       {/* Header */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+      <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
           className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
           animate={{
@@ -34,15 +37,41 @@ export default function OrganisationPage() {
             ease: "easeInOut"
           }}
         />
+        <motion.div 
+          className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, -180, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
         
         <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-full text-sm font-semibold mb-8 shadow-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <span>100+ Years of Excellence</span>
+          </motion.div>
+
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Organisation
+            <span className="bg-gradient-to-r from-slate-800 via-blue-900 to-teal-700 bg-clip-text text-transparent">
+              Organisation
+            </span>
           </motion.h1>
           <motion.p 
             className="text-xl text-gray-600 max-w-4xl leading-relaxed"
@@ -95,9 +124,9 @@ export default function OrganisationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="bg-gradient-to-br from-white to-teal-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-teal-700 rounded-2xl flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
@@ -113,9 +142,9 @@ export default function OrganisationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-gradient-to-br from-white to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-emerald-700 rounded-2xl flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
@@ -551,7 +580,7 @@ export default function OrganisationPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-800 via-blue-900 to-teal-800 text-white relative overflow-hidden">
         <motion.div 
           className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
           animate={{
@@ -560,6 +589,18 @@ export default function OrganisationPage() {
           }}
           transition={{
             duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, -50, 0],
+          }}
+          transition={{
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -575,7 +616,7 @@ export default function OrganisationPage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Partner with Excellence
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
+          <p className="text-xl text-white/90 mb-10 leading-relaxed">
             Experience the difference that over 100 years of expertise makes in your operations
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -593,7 +634,7 @@ export default function OrganisationPage() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 href="/about" 
-                className="inline-flex items-center gap-2 px-10 py-5 border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 text-lg"
+                className="inline-flex items-center gap-2 px-10 py-5 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 text-lg backdrop-blur-sm"
               >
                 Learn More About Us
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -605,6 +646,7 @@ export default function OrganisationPage() {
         </motion.div>
       </section>
     </main>
+    </>
   )
 }
 

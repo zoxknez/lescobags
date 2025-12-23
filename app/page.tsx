@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         {/* Animated Background Elements */}
         <motion.div 
           className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
@@ -48,7 +48,7 @@ export default function Home() {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 left-10 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+          className="absolute bottom-20 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -77,7 +77,7 @@ export default function Home() {
                 Lescobags Packaging Solutions
               </motion.h1>
               <motion.p 
-                className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600 mb-4 font-light"
+                className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-teal-700 mb-4 font-light"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -170,7 +170,7 @@ export default function Home() {
             {/* Baffle Bags */}
             <motion.div variants={fadeInUp}>
               <Link href="/products" className="group block">
-                <div className="bg-gradient-to-br from-white to-green-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-green-300">
+                <div className="bg-gradient-to-br from-white to-teal-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-teal-300">
                   <motion.div 
                     className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
@@ -183,7 +183,7 @@ export default function Home() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-green-600 transition-colors">Block Bottom Bags</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-teal-700 transition-colors">Block Bottom Bags</h3>
                   <p className="text-gray-600 text-center">
                     Flat bottom design for stable standing, perfect for storage and product display.
                   </p>
@@ -194,7 +194,7 @@ export default function Home() {
             {/* Conductive Bags */}
             <motion.div variants={fadeInUp}>
               <Link href="/products" className="group block">
-                <div className="bg-gradient-to-br from-white to-yellow-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-yellow-300">
+                <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-slate-300">
                   <motion.div 
                     className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
@@ -207,7 +207,7 @@ export default function Home() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-yellow-600 transition-colors">Pillow Bags</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-slate-700 transition-colors">Pillow Bags</h3>
                   <p className="text-gray-600 text-center">
                     Versatile bags suitable for a wide range of products, available in various materials.
                   </p>
@@ -218,7 +218,7 @@ export default function Home() {
             {/* Container Liners */}
             <motion.div variants={fadeInUp}>
               <Link href="/products" className="group block">
-                <div className="bg-gradient-to-br from-white to-purple-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-purple-300">
+                <div className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-emerald-300">
                   <motion.div 
                     className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
@@ -231,7 +231,7 @@ export default function Home() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-purple-600 transition-colors">Container Liners</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-emerald-700 transition-colors">Container Liners</h3>
                   <p className="text-gray-600 text-center">
                     Additional protection for products during transport in containers, protecting from moisture and contamination.
                   </p>
@@ -242,7 +242,7 @@ export default function Home() {
             {/* Pillow Bags */}
             <motion.div variants={fadeInUp}>
               <Link href="/products" className="group block">
-                <div className="bg-gradient-to-br from-white to-orange-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-orange-300">
+                <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-blue-300">
                   <motion.div 
                     className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
@@ -255,7 +255,7 @@ export default function Home() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-orange-600 transition-colors">Pillow Bags</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-blue-700 transition-colors">Pillow Bags</h3>
                   <p className="text-gray-600 text-center">
                     Versatile bags suitable for a wide range of products, available in plastic fabric, jute, or film.
                   </p>
@@ -368,9 +368,9 @@ export default function Home() {
                     sizes="128px"
                   />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">ISO 14001:2004</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors">ISO 14001:2004</h3>
                 <p className="text-gray-600">Environmental Management</p>
-                <p className="text-sm text-green-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
+                <p className="text-sm text-teal-700 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
               </div>
             </motion.div>
 
@@ -392,9 +392,9 @@ export default function Home() {
                     sizes="128px"
                   />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">HACCP</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors">HACCP</h3>
                 <p className="text-gray-600">Food Safety Management</p>
-                <p className="text-sm text-purple-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
+                <p className="text-sm text-emerald-700 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to view certificate</p>
               </div>
             </motion.div>
           </motion.div>
@@ -405,7 +405,7 @@ export default function Home() {
       <section className="py-20 px-6 bg-white relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -416,7 +416,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Excellence Since <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">1919</span>
+                Excellence Since <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-teal-700">1919</span>
               </h2>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 For over a century, Lescobags has been at the forefront of packaging innovation. 
@@ -448,31 +448,31 @@ export default function Home() {
                 className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-5xl font-bold text-blue-600 mb-2">104+</div>
+                <div className="text-5xl font-bold text-blue-700 mb-2">104+</div>
                 <div className="text-gray-700 font-semibold">Years of Excellence</div>
               </motion.div>
 
               <motion.div 
-                className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-5xl font-bold text-green-600 mb-2">2000m²</div>
+                <div className="text-5xl font-bold text-teal-700 mb-2">2000m²</div>
                 <div className="text-gray-700 font-semibold">Production Facility</div>
               </motion.div>
 
               <motion.div 
-                className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-5xl font-bold text-purple-600 mb-2">3</div>
+                <div className="text-5xl font-bold text-slate-700 mb-2">3</div>
                 <div className="text-gray-700 font-semibold">ISO Certifications</div>
               </motion.div>
 
               <motion.div 
-                className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-5xl font-bold text-yellow-600 mb-2">100%</div>
+                <div className="text-5xl font-bold text-emerald-700 mb-2">100%</div>
                 <div className="text-gray-700 font-semibold">Quality Guaranteed</div>
               </motion.div>
             </motion.div>
@@ -481,7 +481,7 @@ export default function Home() {
       </section>
 
       {/* Customer Satisfaction */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-800 via-blue-900 to-teal-800 text-white relative overflow-hidden">
         {/* Animated background shapes */}
         <motion.div 
           className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
@@ -497,7 +497,7 @@ export default function Home() {
           }}
         />
         <motion.div 
-          className="absolute bottom-0 right-0 w-96 h-96 bg-green-400/20 rounded-full filter blur-3xl"
+          className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -100, 0],
@@ -519,7 +519,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Customer Satisfaction is Our Priority</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               We don't just deliver products – we deliver solutions that exceed expectations
             </p>
           </motion.div>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Navigation from '../components/Navigation'
 
 export default function TechnologyPage() {
   const fadeInUp = {
@@ -19,14 +20,28 @@ export default function TechnologyPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-white pt-24 overflow-hidden">
       {/* Header */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+      <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
           className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
           animate={{
             scale: [1, 1.3, 1],
-            rotate: [0, 180, 0],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, -180, -360],
           }}
           transition={{
             duration: 15,
@@ -36,16 +51,30 @@ export default function TechnologyPage() {
         />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-full text-sm font-semibold mb-8 shadow-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            <span>Advanced Manufacturing Technology</span>
+          </motion.div>
+
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Technology
+            <span className="bg-gradient-to-r from-slate-800 via-blue-900 to-teal-700 bg-clip-text text-transparent">
+              Technology
+            </span>
           </motion.h1>
           <motion.p 
-            className="text-2xl text-gray-600 max-w-3xl mx-auto"
+            className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -57,7 +86,7 @@ export default function TechnologyPage() {
 
       {/* Main Content */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Introduction */}
@@ -109,7 +138,7 @@ export default function TechnologyPage() {
               </p>
               <Link 
                 href="/technology/production-technology"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-blue-700 text-white rounded-xl font-semibold hover:bg-blue-800 hover:shadow-lg transition-all duration-300"
               >
                 More info
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,10 +150,10 @@ export default function TechnologyPage() {
             {/* Quality */}
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100"
+              className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-emerald-100"
             >
               <motion.div 
-                className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-8"
+                className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center mb-8"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.8 }}
               >
@@ -138,7 +167,7 @@ export default function TechnologyPage() {
               </p>
               <Link 
                 href="/technology/quality"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 hover:shadow-lg transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-xl font-semibold hover:bg-emerald-800 hover:shadow-lg transition-all duration-300"
               >
                 More info
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,8 +198,8 @@ export default function TechnologyPage() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-blue-100">
+                  <div className="w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold text-white">1</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Raw Material</h3>
@@ -184,8 +213,8 @@ export default function TechnologyPage() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-teal-100">
+                  <div className="w-16 h-16 bg-teal-700 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold text-white">2</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Weaving</h3>
@@ -199,8 +228,8 @@ export default function TechnologyPage() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-                  <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100">
+                  <div className="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold text-white">3</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Cutting & Sewing</h3>
@@ -214,8 +243,8 @@ export default function TechnologyPage() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-                  <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-emerald-100">
+                  <div className="w-16 h-16 bg-emerald-700 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold text-white">4</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Quality Control</h3>
@@ -237,10 +266,10 @@ export default function TechnologyPage() {
           >
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-blue-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -256,10 +285,10 @@ export default function TechnologyPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="bg-gradient-to-br from-white to-teal-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-teal-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-teal-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -275,10 +304,10 @@ export default function TechnologyPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -296,7 +325,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-800 via-blue-900 to-teal-800 text-white relative overflow-hidden">
         <motion.div 
           className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
           animate={{
@@ -305,6 +334,18 @@ export default function TechnologyPage() {
           }}
           transition={{
             duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -320,7 +361,7 @@ export default function TechnologyPage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Experience Advanced Technology
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
+          <p className="text-xl text-white/90 mb-10 leading-relaxed">
             Discover how our state-of-the-art technology delivers superior packaging solutions
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -350,6 +391,7 @@ export default function TechnologyPage() {
         </motion.div>
       </section>
     </main>
+    </>
   )
 }
 

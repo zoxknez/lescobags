@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Navigation from '../components/Navigation'
 
 export default function FacilityPage() {
   const fadeInUp = {
@@ -31,9 +32,11 @@ export default function FacilityPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-white pt-24 overflow-hidden">
       {/* Header */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+      <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
           className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
           animate={{
@@ -46,18 +49,44 @@ export default function FacilityPage() {
             ease: "easeInOut"
           }}
         />
+        <motion.div 
+          className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, -180, -360],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-full text-sm font-semibold mb-8 shadow-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <span>9000m² Production Capacity</span>
+          </motion.div>
+
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Infrastructure & Facilities
+            <span className="bg-gradient-to-r from-slate-800 via-blue-900 to-teal-700 bg-clip-text text-transparent">
+              Infrastructure & Facilities
+            </span>
           </motion.h1>
           <motion.p 
-            className="text-2xl text-gray-600 max-w-3xl mx-auto"
+            className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -131,13 +160,13 @@ export default function FacilityPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-square bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center p-8 shadow-2xl hover:shadow-3xl transition-all duration-500">
+              <div className="aspect-square bg-gradient-to-br from-slate-100 via-blue-100 to-teal-100 rounded-2xl flex items-center justify-center p-8 shadow-2xl hover:shadow-3xl transition-all duration-500">
                 <div className="text-center">
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   >
-                    <svg className="w-64 h-64 text-blue-600 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-64 h-64 text-blue-700 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </motion.div>
@@ -252,10 +281,10 @@ export default function FacilityPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="bg-gradient-to-br from-white to-teal-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-teal-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-teal-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -272,10 +301,10 @@ export default function FacilityPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-emerald-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -291,10 +320,10 @@ export default function FacilityPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-br from-white to-yellow-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -312,7 +341,7 @@ export default function FacilityPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-800 via-blue-900 to-teal-800 text-white relative overflow-hidden">
         <motion.div 
           className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
           animate={{
@@ -321,6 +350,18 @@ export default function FacilityPage() {
           }}
           transition={{
             duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -336,7 +377,7 @@ export default function FacilityPage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Visit Our Facility
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
+          <p className="text-xl text-white/90 mb-10 leading-relaxed">
             Schedule a tour to see our state-of-the-art production capabilities firsthand
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -353,5 +394,6 @@ export default function FacilityPage() {
         </motion.div>
       </section>
     </main>
+    </>
   )
 }

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Navigation from '../components/Navigation'
 
 export default function DistributionPartnersPage() {
   const fadeInUp = {
@@ -11,33 +12,61 @@ export default function DistributionPartnersPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-white pt-24 overflow-hidden">
       {/* Header */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+      <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
           className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
           animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 0],
+            scale: [1, 1.3, 1],
+            rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 12,
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, -180, -360],
+          }}
+          transition={{
+            duration: 15,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-full text-sm font-semibold mb-8 shadow-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span>Global Distribution Network</span>
+          </motion.div>
+
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Distribution Partners
+            <span className="bg-gradient-to-r from-slate-800 via-blue-900 to-teal-700 bg-clip-text text-transparent">
+              Distribution Partners
+            </span>
           </motion.h1>
           <motion.p 
-            className="text-2xl text-gray-600 max-w-3xl mx-auto"
+            className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -103,10 +132,10 @@ export default function DistributionPartnersPage() {
           >
             {/* DRINA-KOMERC */}
             <motion.div 
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group"
+              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group border border-gray-100"
               whileHover={{ y: -10 }}
             >
-              <div className="bg-gradient-to-br from-blue-600 to-green-600 p-8 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-blue-700 to-teal-700 p-8 relative overflow-hidden">
                 <motion.div 
                   className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
@@ -162,14 +191,14 @@ export default function DistributionPartnersPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1">Phone</h4>
-                      <a href="tel:+38765660099" className="text-blue-600 hover:text-blue-700 font-semibold">
+                      <a href="tel:+38765660099" className="text-blue-700 hover:text-blue-800 font-semibold">
                         +387 65 660 099
                       </a>
                     </div>
@@ -182,8 +211,8 @@ export default function DistributionPartnersPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                   >
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
@@ -203,7 +232,7 @@ export default function DistributionPartnersPage() {
                 >
                   <a 
                     href="tel:+38765660099"
-                    className="w-full block text-center px-6 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full block text-center px-6 py-4 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Contact Partner
                   </a>
@@ -213,11 +242,11 @@ export default function DistributionPartnersPage() {
 
             {/* Become a Partner Card */}
             <motion.div 
-              className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-12 flex flex-col items-center justify-center text-center"
+              className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-12 flex flex-col items-center justify-center text-center border border-teal-100"
               whileHover={{ scale: 1.02 }}
             >
               <motion.div 
-                className="w-24 h-24 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center mb-8"
+                className="w-24 h-24 bg-gradient-to-br from-blue-700 to-teal-700 rounded-full flex items-center justify-center mb-8"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
@@ -236,7 +265,7 @@ export default function DistributionPartnersPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-teal-700 text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300"
                 >
                   Contact Us
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -277,10 +306,10 @@ export default function DistributionPartnersPage() {
           >
             <motion.div 
               variants={fadeInUp}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-blue-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-blue-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -296,10 +325,10 @@ export default function DistributionPartnersPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-teal-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-teal-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -315,10 +344,10 @@ export default function DistributionPartnersPage() {
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-emerald-100"
             >
               <motion.div 
-                className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6"
+                className="w-16 h-16 bg-emerald-700 rounded-2xl flex items-center justify-center mb-6"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -335,5 +364,6 @@ export default function DistributionPartnersPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }
