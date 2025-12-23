@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-white font-bold mb-4 text-lg">About</h3>
+            <h3 className="text-white font-bold mb-4 text-lg">Company</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  Company
+                  About Us
                 </Link>
               </li>
               <li>
@@ -27,6 +27,33 @@ export default function Footer() {
               <li>
                 <Link href="/team" className="hover:text-white transition-colors">
                   Meet The Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/quality" className="hover:text-white transition-colors">
+                  Quality & Certifications
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-white font-bold mb-4 text-lg">Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/distribution-partners" className="hover:text-white transition-colors">
+                  Distribution Partners
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="hover:text-white transition-colors">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>

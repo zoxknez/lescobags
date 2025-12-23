@@ -15,7 +15,7 @@ export default function Navigation() {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
             </Link>
@@ -23,16 +23,16 @@ export default function Navigation() {
               Products
             </Link>
             <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
-              About Us
+              About
             </Link>
             <Link href="/facility" className="text-gray-700 hover:text-blue-600 transition-colors">
               Facility
             </Link>
-            <Link href="/team" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Team
+            <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Partners
             </Link>
-            <Link href="/quality" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Quality
+            <Link href="/gallery" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Gallery
             </Link>
             <Link 
               href="/contact" 
@@ -59,10 +59,10 @@ export default function Navigation() {
             <div className="flex flex-col gap-4">
               <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
               <Link href="/products" className="text-gray-700 hover:text-blue-600">Products</Link>
-              <Link href="/about" className="text-gray-700 hover:text-blue-600">About Us</Link>
+              <Link href="/about" className="text-gray-700 hover:text-blue-600">About</Link>
               <Link href="/facility" className="text-gray-700 hover:text-blue-600">Facility</Link>
-              <Link href="/team" className="text-gray-700 hover:text-blue-600">Team</Link>
-              <Link href="/quality" className="text-gray-700 hover:text-blue-600">Quality</Link>
+              <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600">Partners</Link>
+              <Link href="/gallery" className="text-gray-700 hover:text-blue-600">Gallery</Link>
               <Link href="/contact" className="px-6 py-2 bg-blue-600 text-white rounded-lg text-center">Contact</Link>
             </div>
           </div>
