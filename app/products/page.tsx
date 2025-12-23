@@ -1061,5 +1061,6 @@ export default function ProductsPage() {
         </motion.div>
       </section>
     </main>
+    </>
   )
 }
