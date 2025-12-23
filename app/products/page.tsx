@@ -3,51 +3,122 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Navigation from '../components/Navigation'
 
 export default function ProductsPage() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.15
-      }
+  const products = [
+    {
+      id: 'big-bags',
+      title: 'Big Bags',
+      subtitle: 'Flexible Intermediate Bulk Containers',
+      description: 'Perfect packaging solution to store and transport dry bulk goods. Custom-made for every sector.',
+      image: '/images/products/big-bags.jpg',
+      gradient: 'from-blue-600 to-cyan-500',
+      features: ['Capacity: 500-2000 kg', '4-loop, 2-loop, Quadro designs', 'Food-safe certified', 'Custom printing available'],
+      link: '/products/big-bags'
+    },
+    {
+      id: 'block-bottom-bags',
+      title: 'Block Bottom Bags',
+      subtitle: 'Advanced Cassette Bags',
+      description: 'The most advanced type of small bags with flat bottom for hassle-free filling and stacking.',
+      image: '/images/products/block-bottom-bags.jpg',
+      gradient: 'from-green-600 to-emerald-500',
+      features: ['Flat bottom design', 'Easy stacking', 'With valve or open mouth', 'Dimensions: 30-60cm width'],
+      link: '/products/block-bottom-bags'
+    },
+    {
+      id: 'pillow-bags',
+      title: 'Pillow Bags',
+      subtitle: 'Versatile Standard Packaging',
+      description: 'Most versatile packaging for bulk goods up to 100 kg. Easy to transport, stack and fill.',
+      image: '/images/products/pillow-bags.jpg',
+      gradient: 'from-purple-600 to-pink-500',
+      features: ['Up to 100 kg capacity', 'Woven plastic or natural jute', 'Custom printing', 'Multiple sizes available'],
+      link: '/products/pillow-bags'
+    },
+    {
+      id: 'container-liners',
+      title: 'Container Liners',
+      subtitle: 'Hygienic Bulk Transport',
+      description: 'Convert a sea container into a hygienic bulk container with our specialized liner systems.',
+      image: '/images/products/container-liners.jpg',
+      gradient: 'from-orange-600 to-red-500',
+      features: ['20 & 40-foot containers', 'Food-safe materials', 'Custom filling systems', 'Dust & moisture protection'],
+      link: '/products/container-liners'
     }
-  }
+  ]
+
+  const specialCategories = [
+    {
+      title: 'Recycled Bags',
+      description: 'Sustainable packaging made from recycled polypropylene (40-100% rPP)',
+      icon: '♻️',
+      link: '/products/recycled-bags',
+      color: 'bg-green-50 border-green-200'
+    },
+    {
+      title: 'Special Usage',
+      description: 'Food contact, UN certified, ATEX antistatic, and ventilated bags',
+      icon: '⚡',
+      link: '/products/special-usage',
+      color: 'bg-blue-50 border-blue-200'
+    },
+    {
+      title: 'Custom Design',
+      description: 'U-panel, 4-panel, Tubular, Quadro, Conical, and Combo-cube designs',
+      icon: '🎨',
+      link: '/products/custom-design',
+      color: 'bg-purple-50 border-purple-200'
+    },
+    {
+      title: 'Industries',
+      description: 'Specialized solutions for 8 different industries and sectors',
+      icon: '🏭',
+      link: '/products/industries',
+      color: 'bg-orange-50 border-orange-200'
+    }
+  ]
 
   return (
-    <main className="min-h-screen bg-white pt-24 overflow-hidden">
-      {/* Header */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
-        <motion.div 
-          className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 50, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Our Products
-          </motion.h1>
-          <motion.p 
-            className="text-2xl text-gray-600 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+        {/* Header */}
+        <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+          <motion.div 
+            className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+            animate={{
+              scale: [1, 1.2, 1],
+              x: [0, 50, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          
+          <div className="max-w-7xl mx-auto text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6"
+            >
+              Experts in Woven Packaging
+            </motion.div>
+            
+            <motion.h1 
+              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Our Products
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
