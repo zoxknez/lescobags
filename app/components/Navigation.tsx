@@ -25,8 +25,20 @@ export default function Navigation() {
             <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
               About
             </Link>
+            <Link href="/organisation" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Organisation
+            </Link>
             <Link href="/facility" className="text-gray-700 hover:text-blue-600 transition-colors">
               Facility
+            </Link>
+            <Link href="/technology" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Technology
+            </Link>
+            <Link href="/centenary" className="text-gray-700 hover:text-blue-600 transition-colors">
+              100 Years
+            </Link>
+            <Link href="/jobs" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Jobs
             </Link>
             <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600 transition-colors">
               Partners
@@ -60,7 +72,11 @@ export default function Navigation() {
               <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
               <Link href="/products" className="text-gray-700 hover:text-blue-600">Products</Link>
               <Link href="/about" className="text-gray-700 hover:text-blue-600">About</Link>
+              <Link href="/organisation" className="text-gray-700 hover:text-blue-600">Organisation</Link>
               <Link href="/facility" className="text-gray-700 hover:text-blue-600">Facility</Link>
+              <Link href="/technology" className="text-gray-700 hover:text-blue-600">Technology</Link>
+              <Link href="/centenary" className="text-gray-700 hover:text-blue-600">100 Years</Link>
+              <Link href="/jobs" className="text-gray-700 hover:text-blue-600">Jobs</Link>
               <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600">Partners</Link>
               <Link href="/gallery" className="text-gray-700 hover:text-blue-600">Gallery</Link>
               <Link href="/contact" className="px-6 py-2 bg-blue-600 text-white rounded-lg text-center">Contact</Link>

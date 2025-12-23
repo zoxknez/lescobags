@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -135,7 +136,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -146,13 +147,16 @@ export default function Home() {
               <Link href="/products" className="group block">
                 <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-blue-300">
                   <motion.div 
-                    className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
+                    <Image 
+                      src="/images/bigbag-render-shade.webp" 
+                      alt="Standard Big Bags" 
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
                   </motion.div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">Standard Big Bags</h3>
                   <p className="text-gray-600 text-center">
@@ -167,17 +171,20 @@ export default function Home() {
               <Link href="/products" className="group block">
                 <div className="bg-gradient-to-br from-white to-green-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-green-300">
                   <motion.div 
-                    className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                    </svg>
+                    <Image 
+                      src="/images/blockbottombags-render.webp" 
+                      alt="Baffle Bags" 
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-green-600 transition-colors">Baffle Bags</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-green-600 transition-colors">Block Bottom Bags</h3>
                   <p className="text-gray-600 text-center">
-                    Chosen to use the area for carried and stocked big bags as optimal as possible.
+                    Flat bottom design for stable standing, perfect for storage and product display.
                   </p>
                 </div>
               </Link>
@@ -188,38 +195,92 @@ export default function Home() {
               <Link href="/products" className="group block">
                 <div className="bg-gradient-to-br from-white to-yellow-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-yellow-300">
                   <motion.div 
-                    className="w-20 h-20 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <svg className="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                    <Image 
+                      src="/images/pillowbags-render.webp" 
+                      alt="Conductive Bags" 
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-yellow-600 transition-colors">Conductive Bags</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-yellow-600 transition-colors">Pillow Bags</h3>
                   <p className="text-gray-600 text-center">
-                    Specialized bags with conductive properties for sensitive materials and environments.
+                    Versatile bags suitable for a wide range of products, available in various materials.
                   </p>
                 </div>
               </Link>
             </motion.div>
 
-            {/* Food Grade Bags */}
+            {/* Container Liners */}
             <motion.div variants={fadeInUp}>
               <Link href="/products" className="group block">
                 <div className="bg-gradient-to-br from-white to-purple-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-purple-300">
                   <motion.div 
-                    className="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <Image 
+                      src="/images/linerbagsfull.webp" 
+                      alt="Container Liners" 
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-purple-600 transition-colors">Food Grade Bags</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-purple-600 transition-colors">Container Liners</h3>
                   <p className="text-gray-600 text-center">
-                    HACCP certified bags suitable for food products with the highest safety standards.
+                    Additional protection for products during transport in containers, protecting from moisture and contamination.
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Pillow Bags */}
+            <motion.div variants={fadeInUp}>
+              <Link href="/products" className="group block">
+                <div className="bg-gradient-to-br from-white to-orange-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-orange-300">
+                  <motion.div 
+                    className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Image 
+                      src="/images/pillowbags-render.webp" 
+                      alt="Pillow Bags" 
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-orange-600 transition-colors">Pillow Bags</h3>
+                  <p className="text-gray-600 text-center">
+                    Versatile bags suitable for a wide range of products, available in plastic fabric, jute, or film.
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Recycled Bags */}
+            <motion.div variants={fadeInUp}>
+              <Link href="/products" className="group block">
+                <div className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 h-full hover:-translate-y-2 hover:border-emerald-300">
+                  <motion.div 
+                    className="w-full h-48 relative mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Image 
+                      src="/images/bigbagscustom.webp" 
+                      alt="Recycled Bags" 
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-emerald-600 transition-colors">Recycled Bags</h3>
+                  <p className="text-gray-600 text-center">
+                    Environmentally friendly packaging solutions made from recycled materials, maintaining quality and durability.
                   </p>
                 </div>
               </Link>
