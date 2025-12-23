@@ -45,10 +45,3 @@ body {
     }
   }
 }
-
-/* Hardware acceleration for all animations */
-.motion-safe\:animate-* {
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
