@@ -455,16 +455,15 @@ export default function ProductsPage() {
 
               <motion.div 
                 className="grid grid-cols-2 gap-4 mb-6"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <motion.div variants={fadeInUp} className="bg-purple-50 p-6 rounded-xl text-center">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-purple-50 p-6 rounded-xl text-center">
                   <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
                   <div className="text-sm text-gray-600">Protection</div>
                 </motion.div>
-                <motion.div variants={fadeInUp} className="bg-purple-50 p-6 rounded-xl text-center">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-purple-50 p-6 rounded-xl text-center">
                   <div className="text-3xl font-bold text-purple-600 mb-2">Custom</div>
                   <div className="text-sm text-gray-600">Sized</div>
                 </motion.div>
@@ -694,9 +693,8 @@ export default function ProductsPage() {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
                 >
@@ -710,9 +708,8 @@ export default function ProductsPage() {
                 </motion.div>
                 
                 <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
@@ -727,9 +724,8 @@ export default function ProductsPage() {
                 </motion.div>
                 
                 <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
@@ -744,9 +740,8 @@ export default function ProductsPage() {
                 </motion.div>
                 
                 <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
@@ -979,14 +974,13 @@ export default function ProductsPage() {
             <p className="text-xl text-blue-100">ISO 9001:2008 Certified Excellence</p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }} className="text-center">
               <motion.div 
                 className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 mx-auto"
                 whileHover={{ scale: 1.1, rotate: 360 }}
@@ -1000,7 +994,7 @@ export default function ProductsPage() {
               <p className="text-blue-100">Quality checks from the source</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-center">
               <motion.div 
                 className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 mx-auto"
                 whileHover={{ scale: 1.1, rotate: 360 }}
@@ -1015,7 +1009,7 @@ export default function ProductsPage() {
               <p className="text-blue-100">Continuous quality control</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-center">
               <motion.div 
                 className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 mx-auto"
                 whileHover={{ scale: 1.1, rotate: 360 }}

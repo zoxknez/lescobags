@@ -4,6 +4,16 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 
+interface Milestone {
+  year: string
+  title: string
+  subtitle: string
+  description: string
+  image: string
+  gradient: string
+  achievements: string[]
+}
+
 export default function HundredYearsPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -408,7 +418,7 @@ function MilestoneSection({
   isActive,
   scrollProgress
 }: { 
-  milestone: typeof milestones[0]
+  milestone: Milestone
   index: number
   isActive: boolean
   scrollProgress: any
