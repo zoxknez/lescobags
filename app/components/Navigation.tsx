@@ -1,14 +1,41 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Show nav when scrolling up, hide when scrolling down
+      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+        setMobileMenuOpen(false) // Close mobile menu when hiding nav
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+  }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-transform duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
@@ -98,17 +125,17 @@ export default function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden pt-4 pb-2">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-              <Link href="/products" className="text-gray-700 hover:text-blue-600">Products</Link>
-              <Link href="/about" className="text-gray-700 hover:text-blue-600">About</Link>
-              <Link href="/organisation" className="text-gray-700 hover:text-blue-600">Organisation</Link>
-              <Link href="/facility" className="text-gray-700 hover:text-blue-600">Facility</Link>
-              <Link href="/technology" className="text-gray-700 hover:text-blue-600">Technology</Link>
-              <Link href="/centenary" className="text-gray-700 hover:text-blue-600">100 Years</Link>
-              <Link href="/jobs" className="text-gray-700 hover:text-blue-600">Jobs</Link>
-              <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600">Partners</Link>
-              <Link href="/gallery" className="text-gray-700 hover:text-blue-600">Gallery</Link>
-              <Link href="/contact" className="px-6 py-2 bg-blue-600 text-white rounded-lg text-center">Contact</Link>
+              <Link href="/" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Home</Link>
+              <Link href="/products" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Products</Link>
+              <Link href="/about" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>About</Link>
+              <Link href="/organisation" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Organisation</Link>
+              <Link href="/facility" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Facility</Link>
+              <Link href="/technology" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Technology</Link>
+              <Link href="/centenary" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>100 Years</Link>
+              <Link href="/jobs" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Jobs</Link>
+              <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Partners</Link>
+              <Link href="/gallery" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Gallery</Link>
+              <Link href="/contact" className="px-6 py-2 bg-blue-600 text-white rounded-lg text-center" onClick={closeMobileMenu}>Contact</Link>
             </div>
           </div>
         )}
