@@ -182,7 +182,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Big Bags (FIBC)</span>
+                <span className="bg-gradient-to-r from-blue-700 to-teal-600 bg-clip-text text-transparent">Big Bags (FIBC)</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Used for the carrying and storage of dry non-hazardous materials in powder, flake and 
@@ -273,7 +273,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full px-6 py-3 bg-gradient-to-r from-blue-700 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     View All Types
                   </motion.button>
@@ -301,7 +301,7 @@ export default function ProductsPage() {
               className="order-2 lg:order-1"
             >
               <h2 className="text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">Block Bottom Bags</span>
+                <span className="bg-gradient-to-r from-teal-700 to-emerald-600 bg-clip-text text-transparent">Block Bottom Bags</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Block bottom bags feature a flat bottom that enables stable standing, making them ideal for 
@@ -316,11 +316,11 @@ export default function ProductsPage() {
               
               <div className="space-y-4 mb-6">
                 <motion.div 
-                  className="flex items-start gap-4 p-4 bg-green-50 rounded-xl"
-                  whileHover={{ x: 10, backgroundColor: "#dcfce7" }}
+                  className="flex items-start gap-4 p-4 bg-teal-50 rounded-xl"
+                  whileHover={{ x: 10, backgroundColor: "#f0fdfa" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -332,11 +332,11 @@ export default function ProductsPage() {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-start gap-4 p-4 bg-green-50 rounded-xl"
-                  whileHover={{ x: 10, backgroundColor: "#dcfce7" }}
+                  className="flex items-start gap-4 p-4 bg-teal-50 rounded-xl"
+                  whileHover={{ x: 10, backgroundColor: "#f0fdfa" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -348,7 +348,7 @@ export default function ProductsPage() {
                 </motion.div>
               </div>
 
-              <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl mb-6">
+              <div className="bg-gradient-to-r from-teal-50 to-teal-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Perfect For</h3>
                 <p className="text-gray-700 text-sm">Retail display, organized storage, and industries requiring stable packaging solutions</p>
               </div>
@@ -358,7 +358,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full px-6 py-3 bg-gradient-to-r from-teal-700 to-emerald-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     View All Types
                   </motion.button>
@@ -367,7 +367,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-white border-2 border-green-600 text-green-600 rounded-xl font-semibold hover:bg-green-50 transition-all duration-300"
+                    className="w-full px-6 py-3 bg-white border-2 border-teal-700 text-teal-700 rounded-xl font-semibold hover:bg-teal-50 transition-all duration-300"
                   >
                     Request Quote
                   </motion.button>
@@ -382,7 +382,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
               className="order-1 lg:order-2"
             >
-              <div className="aspect-square bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
+              <div className="aspect-square bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
                 <Image 
                   src="/images/blockbottombags-render.webp" 
                   alt="Baffle Bags" 
@@ -402,7 +402,7 @@ export default function ProductsPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-square bg-gradient-to-br from-yellow-100 to-yellow-50 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
+              <div className="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
                 <Image 
                   src="/images/pillowbags-render.webp" 
                   alt="Conductive Bags" 
@@ -420,7 +420,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Pillow Bags</span>
+                <span className="bg-gradient-to-r from-slate-700 to-emerald-600 bg-clip-text text-transparent">Pillow Bags</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Versatile bags suitable for a wide range of products, including dry materials and powders. 
@@ -433,11 +433,11 @@ export default function ProductsPage() {
               
               <div className="space-y-4 mb-6">
                 <motion.div 
-                  className="flex items-start gap-4 p-4 bg-yellow-50 rounded-xl"
-                  whileHover={{ x: 10, backgroundColor: "#fef9c3" }}
+                  className="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl"
+                  whileHover={{ x: 10, backgroundColor: "#d1fae5" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-emerald-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -449,11 +449,11 @@ export default function ProductsPage() {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-start gap-4 p-4 bg-yellow-50 rounded-xl"
-                  whileHover={{ x: 10, backgroundColor: "#fef9c3" }}
+                  className="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl"
+                  whileHover={{ x: 10, backgroundColor: "#d1fae5" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-emerald-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -465,7 +465,7 @@ export default function ProductsPage() {
                 </motion.div>
               </div>
 
-              <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-xl mb-6">
+              <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Ideal For</h3>
                 <p className="text-gray-700 text-sm">Dry materials, powders, and products requiring flexible packaging solutions</p>
               </div>
@@ -475,7 +475,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full px-6 py-3 bg-gradient-to-r from-slate-700 to-emerald-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     View All Types
                   </motion.button>
@@ -484,7 +484,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-300"
+                    className="w-full px-6 py-3 bg-white border-2 border-slate-700 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-all duration-300"
                   >
                     Request Quote
                   </motion.button>
@@ -503,7 +503,7 @@ export default function ProductsPage() {
               className="order-2 lg:order-1"
             >
               <h2 className="text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">Container Liners</span>
+                <span className="bg-gradient-to-r from-slate-700 to-teal-600 bg-clip-text text-transparent">Container Liners</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Container liners provide additional protection for your products during transport in containers, 
@@ -517,11 +517,11 @@ export default function ProductsPage() {
               
               <div className="space-y-4 mb-6">
                 <motion.div 
-                  className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl"
-                  whileHover={{ x: 10, backgroundColor: "#f3e8ff" }}
+                  className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
+                  whileHover={{ x: 10, backgroundColor: "#f1f5f9" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -533,11 +533,11 @@ export default function ProductsPage() {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl"
-                  whileHover={{ x: 10, backgroundColor: "#f3e8ff" }}
+                  className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
+                  whileHover={{ x: 10, backgroundColor: "#f1f5f9" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -555,17 +555,17 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-purple-50 p-6 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-slate-50 p-6 rounded-xl text-center">
+                  <div className="text-3xl font-bold text-slate-700 mb-2">100%</div>
                   <div className="text-sm text-gray-600">Protection</div>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-purple-50 p-6 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">Custom</div>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-slate-50 p-6 rounded-xl text-center">
+                  <div className="text-3xl font-bold text-slate-700 mb-2">Custom</div>
                   <div className="text-sm text-gray-600">Sized</div>
                 </motion.div>
               </motion.div>
 
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl mb-6">
+              <div className="bg-gradient-to-r from-slate-50 to-slate-100 p-6 rounded-xl mb-6">
                 <h3 className="font-bold text-gray-900 mb-2">Perfect For</h3>
                 <p className="text-gray-700 text-sm">Long-distance shipping, sensitive products, and international container transport</p>
               </div>
@@ -575,7 +575,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-orange-600 to-red-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full px-6 py-3 bg-gradient-to-r from-slate-700 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     View All Types
                   </motion.button>
@@ -584,7 +584,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-white border-2 border-orange-600 text-orange-600 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-300"
+                    className="w-full px-6 py-3 bg-white border-2 border-slate-700 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-all duration-300"
                   >
                     Request Quote
                   </motion.button>
@@ -599,7 +599,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
               className="order-1 lg:order-2"
             >
-              <div className="aspect-square bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
+              <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-50 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
                 <Image 
                   src="/images/linerbagsfull.webp" 
                   alt="Container Liners" 
@@ -1058,7 +1058,7 @@ export default function ProductsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-gradient-to-br from-green-600 to-green-700 text-white p-8 rounded-2xl shadow-2xl relative overflow-hidden"
+              className="bg-gradient-to-br from-teal-700 to-emerald-700 text-white p-8 rounded-2xl shadow-2xl relative overflow-hidden"
             >
               <div className="absolute inset-0 opacity-20">
                 <Image 
@@ -1101,7 +1101,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Quality Management */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
+      <section className="py-20 px-6 bg-gradient-to-br from-blue-700 via-teal-700 to-emerald-700 text-white relative overflow-hidden">
         <motion.div 
           className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
           animate={{
