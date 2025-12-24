@@ -2,18 +2,11 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -30,7 +23,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         {/* Animated Background Elements */}

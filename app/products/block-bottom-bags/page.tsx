@@ -2,8 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Navigation from '../../components/Navigation'
 
 export default function BlockBottomBagsPage() {
   const bagTypes = [
@@ -101,9 +99,7 @@ export default function BlockBottomBagsPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden">
           <motion.div 
@@ -399,7 +395,6 @@ export default function BlockBottomBagsPage() {
             </motion.div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   )
 }

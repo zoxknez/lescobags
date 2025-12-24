@@ -1,7 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { ReactNode, useEffect, useState } from 'react'
 
 interface TouchOptimizedProps {
   children: ReactNode
@@ -22,7 +22,17 @@ export default function TouchOptimized({
   onClick,
   enableHaptic = false 
 }: TouchOptimizedProps) {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const prefersReducedMotion = useReducedMotion()
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+    const update = (event?: MediaQueryListEvent) => setIsMobile(event?.matches ?? mediaQuery.matches)
+    update()
+
+    mediaQuery.addEventListener('change', update)
+    return () => mediaQuery.removeEventListener('change', update)
+  }, [])
   
   const handleTap = () => {
     // Haptic feedback on supported devices
@@ -32,14 +42,18 @@ export default function TouchOptimized({
     onClick?.()
   }
 
-  const touchProps = isMobile ? {
-    whileTap: { scale: 0.97 },
-    transition: { duration: 0.1 }
-  } : {
-    whileHover: { scale: 1.02 },
-    whileTap: { scale: 0.98 },
-    transition: { duration: 0.2 }
-  }
+  const touchProps = prefersReducedMotion
+    ? {}
+    : isMobile
+      ? {
+          whileTap: { scale: 0.97 },
+          transition: { duration: 0.1 }
+        }
+      : {
+          whileHover: { scale: 1.02 },
+          whileTap: { scale: 0.98 },
+          transition: { duration: 0.2 }
+        }
 
   if (href) {
     return (

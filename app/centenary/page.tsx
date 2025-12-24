@@ -1,10 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { useState, useRef } from 'react'
 import Image from 'next/image'
-import Navigation from '../components/Navigation'
+
+type Milestone = {
+  year: string
+  title: string
+  subtitle: string
+  description: string
+  image: string
+  gradient: string
+  achievements: string[]
+}
 
 export default function CentenaryPage() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -13,12 +22,6 @@ export default function CentenaryPage() {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
-  })
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
   })
 
   const milestones = [
@@ -214,30 +217,14 @@ export default function CentenaryPage() {
     setActiveIndex(newIndex)
   })
 
-  return (
-    <>
-      <Navigation />
-      <main ref={containerRef} className="bg-black">
-        {/* Fixed Progress Indicator */}
-        <div className="fixed top-20 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between mb-2">
-            <div className="text-white font-bold text-sm">
-              {milestones[activeIndex].year}
-            </div>
-            <div className="text-white/60 text-sm">
-              {activeIndex + 1} / {milestones.length}
-            </div>
-          </div>
-          <div className="relative h-1 bg-white/10 rounded-full overflow-hidden">
-            <motion.div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full"
-              style={{ scaleX: smoothProgress }}
-            />
-          </div>
-        </div>
-      </div>
+  const scrollToMilestone = (index: number) => {
+    if (index < 0 || index >= milestones.length) return
+    const element = document.getElementById(`milestone-${index}`)
+    element?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
 
+  return (
+    <main ref={containerRef} className="bg-black">
       {/* Year Navigator - Fixed Right Side */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
         <div className="flex flex-col gap-3">
@@ -245,8 +232,7 @@ export default function CentenaryPage() {
             <button
               key={milestone.year}
               onClick={() => {
-                const element = document.getElementById(`milestone-${index}`)
-                element?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                scrollToMilestone(index)
               }}
               className="group relative"
             >
@@ -348,7 +334,6 @@ export default function CentenaryPage() {
           key={milestone.year}
           milestone={milestone}
           index={index}
-          isActive={activeIndex === index}
         />
       ))}
 
@@ -400,20 +385,17 @@ export default function CentenaryPage() {
           </motion.div>
         </div>
       </section>
-      </main>
-    </>
+    </main>
   )
 }
 
 // Milestone Section Component - Each takes full viewport
 function MilestoneSection({ 
   milestone, 
-  index, 
-  isActive
+  index
 }: { 
-  milestone: any
+  milestone: Milestone
   index: number
-  isActive: boolean
 }) {
   const sectionRef = useRef<HTMLDivElement>(null)
   

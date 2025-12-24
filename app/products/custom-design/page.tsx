@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Navigation from '../../components/Navigation'
 
 export default function CustomDesignPage() {
   const designs = [
@@ -51,9 +50,7 @@ export default function CustomDesignPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
         <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
@@ -148,7 +145,6 @@ export default function CustomDesignPage() {
             </motion.div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   )
 }

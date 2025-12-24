@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Navigation from '../../components/Navigation'
 
 export default function RecycledBagsPage() {
   const benefits = [
@@ -11,6 +10,13 @@ export default function RecycledBagsPage() {
     { title: 'Reduce CO₂ footprint', icon: '🌍', color: 'emerald' },
     { title: 'Attain sustainability goals', icon: '🎯', color: 'teal' }
   ]
+
+  const benefitColorClasses: Record<string, string> = {
+    green: 'bg-green-50 border-green-200',
+    blue: 'bg-blue-50 border-blue-200',
+    emerald: 'bg-emerald-50 border-emerald-200',
+    teal: 'bg-teal-50 border-teal-200'
+  }
 
   const process = [
     { step: '1', title: 'Collection', desc: 'We collect used big bags from customers', icon: '📦' },
@@ -21,9 +27,7 @@ export default function RecycledBagsPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
         <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
           <div className="max-w-7xl mx-auto">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
@@ -44,7 +48,7 @@ export default function RecycledBagsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className={`bg-${b.color}-50 p-6 rounded-xl text-center border-2 border-${b.color}-200`}
+                  className={`${benefitColorClasses[b.color] ?? 'bg-gray-50 border-gray-200'} p-6 rounded-xl text-center border-2`}
                 >
                   <div className="text-5xl mb-3">{b.icon}</div>
                   <h3 className="font-bold text-gray-900">{b.title}</h3>
@@ -134,7 +138,6 @@ export default function RecycledBagsPage() {
             </motion.div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   )
 }

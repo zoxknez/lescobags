@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Navigation from '../components/Navigation'
 
 export default function DistributionPartnersPage() {
   const fadeInUp = {
@@ -12,9 +11,7 @@ export default function DistributionPartnersPage() {
   }
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
       {/* Header */}
       <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
@@ -364,6 +361,5 @@ export default function DistributionPartnersPage() {
         </div>
       </section>
     </main>
-    </>
   )
 }

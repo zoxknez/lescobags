@@ -1,32 +1,51 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const lastScrollYRef = useRef(0)
 
   useEffect(() => {
+    let rafId: number | null = null
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      // Show nav when scrolling up, hide when scrolling down
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
-        setIsVisible(true)
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false)
-        setMobileMenuOpen(false) // Close mobile menu when hiding nav
-      }
-      
-      setLastScrollY(currentScrollY)
+      if (rafId !== null) return
+      rafId = window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY
+        const lastScrollY = lastScrollYRef.current
+
+        // Show nav when scrolling up, hide when scrolling down
+        if (currentScrollY < lastScrollY || currentScrollY < 100) {
+          setIsVisible(true)
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsVisible(false)
+          setMobileMenuOpen(false) // Close mobile menu when hiding nav
+        }
+
+        lastScrollYRef.current = currentScrollY
+        rafId = null
+      })
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId !== null) window.cancelAnimationFrame(rafId)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [mobileMenuOpen])
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
@@ -36,7 +55,7 @@ export default function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <div className="text-2xl font-bold text-gray-900">LESCOBAGS</div>
@@ -112,8 +131,12 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            type="button"
+            className="md:hidden p-2 -mr-2 rounded-lg text-gray-900"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -123,19 +146,19 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-2">
+          <div id="mobile-nav" className="md:hidden pt-4 pb-2">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Home</Link>
-              <Link href="/products" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Products</Link>
-              <Link href="/about" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>About</Link>
-              <Link href="/organisation" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Organisation</Link>
-              <Link href="/facility" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Facility</Link>
-              <Link href="/technology" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Technology</Link>
-              <Link href="/centenary" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>100 Years</Link>
-              <Link href="/jobs" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Jobs</Link>
-              <Link href="/distribution-partners" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Partners</Link>
-              <Link href="/gallery" className="text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Gallery</Link>
-              <Link href="/contact" className="px-6 py-2 bg-blue-600 text-white rounded-lg text-center" onClick={closeMobileMenu}>Contact</Link>
+              <Link href="/" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Home</Link>
+              <Link href="/products" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Products</Link>
+              <Link href="/about" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>About</Link>
+              <Link href="/organisation" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Organisation</Link>
+              <Link href="/facility" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Facility</Link>
+              <Link href="/technology" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Technology</Link>
+              <Link href="/centenary" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>100 Years</Link>
+              <Link href="/jobs" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Jobs</Link>
+              <Link href="/distribution-partners" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Partners</Link>
+              <Link href="/gallery" className="py-2 text-gray-700 hover:text-blue-600" onClick={closeMobileMenu}>Gallery</Link>
+              <Link href="/contact" className="mt-2 px-6 py-3 bg-blue-600 text-white rounded-lg text-center" onClick={closeMobileMenu}>Contact</Link>
             </div>
           </div>
         )}

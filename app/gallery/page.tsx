@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Navigation from '../components/Navigation'
 
 export default function GalleryPage() {
   const fadeInUp = {
@@ -34,9 +33,7 @@ export default function GalleryPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
       {/* Header */}
       <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
@@ -108,7 +105,7 @@ export default function GalleryPage() {
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {images.map((image, index) => (
+            {images.map((image) => (
               <motion.div 
                 key={image.id} 
                 variants={fadeInUp}
@@ -352,6 +349,5 @@ export default function GalleryPage() {
         </div>
       </section>
     </main>
-    </>
   )
 }

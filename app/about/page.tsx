@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Navigation from '../components/Navigation'
 
 export default function AboutPage() {
   const [counters, setCounters] = useState({ years: 0, area: 0, certs: 0, quality: 0 })
@@ -45,9 +43,7 @@ export default function AboutPage() {
   }
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
       {/* Header */}
       <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
         <motion.div 
@@ -510,6 +506,5 @@ export default function AboutPage() {
         </motion.div>
       </section>
     </main>
-    </>
   )
 }

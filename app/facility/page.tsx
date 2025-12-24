@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Navigation from '../components/Navigation'
 
 export default function FacilityPage() {
   const fadeInUp = {
@@ -32,9 +31,7 @@ export default function FacilityPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
       {/* Header */}
       <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
@@ -394,6 +391,5 @@ export default function FacilityPage() {
         </motion.div>
       </section>
     </main>
-    </>
   )
 }

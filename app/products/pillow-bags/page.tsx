@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Navigation from '../../components/Navigation'
 
 export default function PillowBagsPage() {
   const bagTypes = [
@@ -27,9 +26,7 @@ export default function PillowBagsPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
         <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-purple-50 via-white to-pink-50">
           <div className="max-w-7xl mx-auto">
             <nav className="text-sm text-gray-600 mb-6">
@@ -99,7 +96,6 @@ export default function PillowBagsPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   )
 }

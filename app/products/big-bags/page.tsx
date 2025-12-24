@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Navigation from '../../components/Navigation'
 
 export default function BigBagsPage() {
   const bagTypes = [
@@ -95,9 +94,7 @@ export default function BigBagsPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
           <motion.div 
@@ -360,7 +357,6 @@ export default function BigBagsPage() {
             </motion.div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   )
 }

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Navigation from '../components/Navigation'
 
 export default function OrganisationPage() {
   const fadeInUp = {
@@ -20,13 +19,11 @@ export default function OrganisationPage() {
   }
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
       {/* Header */}
       <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         <motion.div 
-          className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          className="absolute top-10 right-10 w-64 h-64 md:w-96 md:h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-30"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, 180, 0],
@@ -38,7 +35,7 @@ export default function OrganisationPage() {
           }}
         />
         <motion.div 
-          className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          className="absolute bottom-10 left-10 w-64 h-64 md:w-96 md:h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-30"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, -180, 0],
@@ -646,7 +643,6 @@ export default function OrganisationPage() {
         </motion.div>
       </section>
     </main>
-    </>
   )
 }
 

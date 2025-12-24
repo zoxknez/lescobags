@@ -3,52 +3,8 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Navigation from '../components/Navigation'
 
 export default function ProductsPage() {
-  const products = [
-    {
-      id: 'big-bags',
-      title: 'Big Bags',
-      subtitle: 'Flexible Intermediate Bulk Containers',
-      description: 'Perfect packaging solution to store and transport dry bulk goods. Custom-made for every sector.',
-      image: '/images/products/big-bags.jpg',
-      gradient: 'from-blue-700 to-blue-600',
-      features: ['Capacity: 500-2000 kg', '4-loop, 2-loop, Quadro designs', 'Food-safe certified', 'Custom printing available'],
-      link: '/products/big-bags'
-    },
-    {
-      id: 'block-bottom-bags',
-      title: 'Block Bottom Bags',
-      subtitle: 'Advanced Cassette Bags',
-      description: 'The most advanced type of small bags with flat bottom for hassle-free filling and stacking.',
-      image: '/images/products/block-bottom-bags.jpg',
-      gradient: 'from-teal-700 to-teal-600',
-      features: ['Flat bottom design', 'Easy stacking', 'With valve or open mouth', 'Dimensions: 30-60cm width'],
-      link: '/products/block-bottom-bags'
-    },
-    {
-      id: 'pillow-bags',
-      title: 'Pillow Bags',
-      subtitle: 'Versatile Standard Packaging',
-      description: 'Most versatile packaging for bulk goods up to 100 kg. Easy to transport, stack and fill.',
-      image: '/images/products/pillow-bags.jpg',
-      gradient: 'from-emerald-700 to-emerald-600',
-      features: ['Up to 100 kg capacity', 'Woven plastic or natural jute', 'Custom printing', 'Multiple sizes available'],
-      link: '/products/pillow-bags'
-    },
-    {
-      id: 'container-liners',
-      title: 'Container Liners',
-      subtitle: 'Hygienic Bulk Transport',
-      description: 'Convert a sea container into a hygienic bulk container with our specialized liner systems.',
-      image: '/images/products/container-liners.jpg',
-      gradient: 'from-slate-700 to-slate-600',
-      features: ['20 & 40-foot containers', 'Food-safe materials', 'Custom filling systems', 'Dust & moisture protection'],
-      link: '/products/container-liners'
-    }
-  ]
-
   const specialCategories = [
     {
       title: 'Recycled Bags',
@@ -81,9 +37,7 @@ export default function ProductsPage() {
   ]
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-white pt-24 overflow-hidden">
+    <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
         {/* Header */}
         <section className="relative py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
         {/* Animated Background Elements */}
@@ -1208,6 +1162,5 @@ export default function ProductsPage() {
         </motion.div>
       </section>
     </main>
-    </>
   )
 }

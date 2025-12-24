@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 
 interface Milestone {
   year: string
@@ -354,8 +354,6 @@ export default function HundredYearsPage() {
           key={milestone.year}
           milestone={milestone}
           index={index}
-          isActive={activeIndex === index}
-          scrollProgress={scrollYProgress}
         />
       ))}
 
@@ -414,14 +412,10 @@ export default function HundredYearsPage() {
 // Milestone Section Component - Each takes full viewport
 function MilestoneSection({ 
   milestone, 
-  index, 
-  isActive,
-  scrollProgress
+  index
 }: { 
   milestone: Milestone
   index: number
-  isActive: boolean
-  scrollProgress: any
 }) {
   const sectionRef = useRef<HTMLDivElement>(null)
   
