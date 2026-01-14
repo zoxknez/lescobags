@@ -84,151 +84,145 @@ export default function ProductionTechnologyPage() {
   return (
     <main className="min-h-screen bg-white pt-24 overflow-x-hidden">
       {/* Header */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
-        <motion.div 
-          className="absolute top-10 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+      <section className="relative py-40 px-6 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+        {/* Animated Background Elements */}
+        <motion.div
+          className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-200/40 rounded-full mix-blend-multiply filter blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-green-200/40 rounded-full mix-blend-multiply filter blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
-            rotate: [0, 180, 0],
+            x: [0, -40, 0],
           }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Breadcrumbs */}
-          <motion.div 
-            className="mb-8 text-sm text-gray-600"
+          <motion.div
+            className="mb-12 flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-blue-600/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
           >
-            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
-            {' > '}
-            <Link href="/technology" className="hover:text-blue-600 transition-colors">Technology</Link>
-            {' > '}
-            <span className="text-gray-900">Production technology</span>
+            <Link href="/" className="hover:text-blue-600">Home</Link>
+            <span className="w-4 h-[1px] bg-blue-600/30"></span>
+            <Link href="/technology" className="hover:text-blue-600">Technology</Link>
+            <span className="w-4 h-[1px] bg-blue-600/30"></span>
+            <span className="text-gray-900">Production</span>
           </motion.div>
 
-          <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+          <motion.h1
+            className="text-6xl md:text-9xl font-black text-gray-900 mb-10 tracking-tighter"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
           >
-            Production technology
+            Production <br /> <span className="bg-gradient-to-r from-blue-700 to-green-600 bg-clip-text text-transparent italic">Intelligence</span>
           </motion.h1>
-          <motion.p 
-            className="text-xl text-gray-600 max-w-4xl leading-relaxed mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Our production sites are equipped with state of the art technology. We are able to produce sophisticated packaging thanks to this vertically integrated production line. In addition, the conditioned production environment guarantees the safety of our staff and your products.
-          </motion.p>
 
-          {/* Features List */}
-          <motion.ul 
-            className="flex flex-wrap gap-6 mb-8"
+          <motion.p
+            className="text-2xl text-gray-600 max-w-4xl leading-relaxed mb-12 font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {features.map((feature, index) => (
-              <li key={index} className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                <span className="text-lg text-gray-700">{feature}</span>
-              </li>
-            ))}
-          </motion.ul>
+            We operate a <span className="text-blue-700 font-semibold italic">vertically integrated ecosystem</span> where every stage of production—from polymer extrusion to technical weaving—is monitored by expert intelligence.
+          </motion.p>
         </div>
       </section>
 
       {/* Production Sites */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.h2 
-            className="text-4xl font-bold text-gray-900 mb-16 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Production sites
-          </motion.h2>
+      <section className="py-32 px-6 relative bg-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full bg-slate-50/50 -skew-y-3 origin-top-right"></div>
 
-          <motion.div 
-            className="space-y-20"
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            className="space-y-32"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
           >
             {productionSites.map((site, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100 hover:shadow-2xl transition-all duration-500"
+                className="group relative"
               >
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
-                  <div>
-                    <div className="flex items-center gap-4 mb-6">
-                      <h3 className="text-3xl font-bold text-gray-900">{site.title}</h3>
-                      {site.size && (
-                        <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
-                          {site.size}
-                        </span>
-                      )}
+                <div className="grid lg:grid-cols-2 gap-20 items-stretch">
+                  <div className="flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-1.5 h-12 bg-blue-600 rounded-full"></div>
+                      <div>
+                        <h3 className="text-[10px] font-black tracking-[0.4em] uppercase text-blue-600 mb-1">{site.location}</h3>
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">{site.title}</h2>
+                      </div>
                     </div>
-                    {site.location && (
-                      <p className="text-lg text-blue-600 font-semibold mb-6">
-                        {site.location}
+
+                    <div className="mb-10 p-8 bg-blue-50/50 rounded-[2rem] border border-blue-100/50">
+                      <p className="text-xl text-gray-600 leading-relaxed font-light italic">
+                        {site.description}
                       </p>
-                    )}
-                    <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                      {site.description}
-                    </p>
-                    <ul className="space-y-4">
-                      {site.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-3">
-                          <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-700 leading-relaxed">{feature}</span>
-                        </li>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                      {site.features.slice(0, 4).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 group-hover:border-blue-200 transition-colors">
+                          <div className="w-8 h-8 rounded-full bg-blue-600/10 flex items-center justify-center flex-shrink-0 text-blue-600">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                          </div>
+                          <span className="text-sm font-bold text-gray-700 leading-snug">{feature}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
 
-                  {/* Images */}
-                  {site.images && (
-                    <div className="grid grid-cols-1 gap-6">
-                      {site.images.map((img, imgIndex) => (
-                        <motion.div
-                          key={imgIndex}
-                          className="relative aspect-video rounded-xl overflow-hidden shadow-lg"
-                          whileHover={{ scale: 1.02 }}
-                          transition={{ duration: 0.3 }}
-                        >
+                  {/* Site Visuals */}
+                  <div className="relative min-h-[500px]">
+                    {site.images ? (
+                      <div className="h-full grid grid-rows-2 gap-6">
+                        <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group/img">
                           <Image
-                            src={img.src}
-                            alt={img.alt}
+                            src={site.images[0].src}
+                            alt={site.images[0].alt}
                             fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover scale-110 group-hover/img:scale-100 transition-transform duration-1000"
                           />
-                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p className="text-white font-semibold">{img.title}</p>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                            <p className="text-white font-black uppercase tracking-widest text-sm">{site.images[0].title}</p>
                           </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  )}
+                        </div>
+                        <div className="grid grid-cols-2 gap-6">
+                          {site.images.slice(1, 3).map((img, idx) => (
+                            <div key={idx} className="relative rounded-[2rem] overflow-hidden shadow-xl group/sub">
+                              <Image
+                                src={img.src}
+                                alt={img.alt}
+                                fill
+                                className="object-cover scale-110 group-hover/sub:scale-100 transition-transform duration-700"
+                              />
+                              <div className="absolute inset-0 bg-black/20 group-hover/sub:bg-transparent transition-colors"></div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="h-full bg-slate-900 rounded-[3rem] p-12 flex flex-col justify-end text-white overflow-hidden relative shadow-2xl">
+                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+                        <div className="relative">
+                          <div className="text-6xl font-black opacity-20 mb-4 tracking-tighter">CENTRAL HUB</div>
+                          <h4 className="text-3xl font-bold mb-4 italic">Operational Excellence</h4>
+                          <p className="text-gray-300 font-light max-w-sm">Strategic location enabling flexible logistics and just-in-time printing capabilities.</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -237,60 +231,44 @@ export default function ProductionTechnologyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
-        <motion.div 
-          className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 100, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+      <section className="py-40 px-6 bg-gradient-to-br from-slate-950 via-blue-950 to-green-950 text-white relative overflow-hidden text-center">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.2] pointer-events-none"></div>
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-green-600/10 rounded-full filter blur-[120px]"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 15, repeat: Infinity }}
         />
-        
-        <motion.div 
-          className="max-w-4xl mx-auto text-center relative z-10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Experience Our Production Excellence
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter">
+            Production <br /> <span className="text-green-500 italic">Ecosystem</span>
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Discover how our state-of-the-art facilities deliver superior packaging solutions
+          <p className="text-2xl text-blue-100/90 mb-16 leading-relaxed font-light">
+            Discover how our state-of-the-art facilities deliver superior packaging solutions for global leaders.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="/facility" 
-                className="inline-flex items-center gap-2 px-10 py-5 bg-white text-blue-600 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 text-lg"
+              <Link
+                href="/facility"
+                className="inline-flex items-center gap-3 px-12 py-6 bg-white text-slate-900 rounded-[2rem] font-black hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)] transition-all duration-300 text-lg"
               >
                 View Our Facility
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center gap-2 px-10 py-5 border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 text-lg"
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 px-12 py-6 border-2 border-white/30 text-white rounded-[2rem] font-black hover:bg-white/10 hover:border-white transition-all duration-300 text-lg"
               >
                 Contact Us
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
               </Link>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
     </main>
   )
 }
-

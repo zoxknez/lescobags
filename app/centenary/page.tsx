@@ -18,7 +18,7 @@ type Milestone = {
 export default function CentenaryPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -224,106 +224,123 @@ export default function CentenaryPage() {
   }
 
   return (
-    <main ref={containerRef} className="bg-black">
+    <main ref={containerRef} className="bg-[#05070a] selection:bg-emerald-500/30">
       {/* Year Navigator - Fixed Right Side */}
-      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
-        <div className="flex flex-col gap-3">
-          {milestones.map((milestone, index) => (
-            <button
-              key={milestone.year}
-              onClick={() => {
-                scrollToMilestone(index)
-              }}
-              className="group relative"
-            >
-              <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === activeIndex 
-                  ? 'bg-white scale-150' 
-                  : 'bg-white/30 hover:bg-white/60'
-              }`} />
-              
-              {/* Year Label on Hover */}
-              <div className={`absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap bg-white text-black px-3 py-1 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none ${
-                index === activeIndex ? 'opacity-100' : ''
-              }`}>
-                {milestone.year}
-              </div>
-            </button>
-          ))}
+      <div className="fixed right-10 top-1/2 -translate-y-1/2 z-50 hidden xl:block">
+        <div className="relative pl-8">
+          {/* Vertical Line */}
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-white/10" />
+          <motion.div
+            className="absolute left-0 top-0 w-px bg-gradient-to-b from-transparent via-emerald-500 to-transparent h-20"
+            animate={{ top: `${(activeIndex / (milestones.length - 1)) * 100}%` }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          />
+
+          <div className="flex flex-col gap-6">
+            {milestones.map((milestone, index) => (
+              <button
+                key={milestone.year}
+                onClick={() => scrollToMilestone(index)}
+                className="group relative flex items-center"
+              >
+                <div className={`w-2 h-2 rounded-full transition-all duration-500 ${index === activeIndex
+                  ? 'bg-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.8)] scale-150'
+                  : 'bg-white/20 group-hover:bg-white/40'
+                  }`} />
+
+                <span className={`absolute left-8 text-[10px] font-black tracking-[0.2em] transition-all duration-500 ${index === activeIndex ? 'text-white opacity-100 translate-x-0' : 'text-white/20 opacity-0 -translate-x-4 group-hover:opacity-60 group-hover:translate-x-1'
+                  }`}>
+                  {milestone.year}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black" />
+      <section className="relative min-h-[110vh] flex items-center justify-center overflow-hidden">
+        {/* Cinematic Backdrop */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.1] mix-blend-overlay" />
+
+          {/* Floating Light Blobs */}
           <motion.div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)`,
-            }}
             animate={{
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-emerald-600/10 blur-[120px] rounded-full"
+          />
+          <motion.div
+            animate={{
+              x: [0, -50, 0],
+              y: [0, -40, 0],
               scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
             }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full"
           />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-6xl">
+        <div className="relative z-10 text-center px-6 w-full max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="inline-block mb-8 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10">
-              <span className="text-white/80 font-semibold tracking-wider text-sm">
-                1923 — 2023
+            <div className="inline-flex items-center gap-4 mb-12 px-8 py-3 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[11px] text-white font-black uppercase tracking-[0.5em] opacity-80">
+                Heritage Since 1923
               </span>
             </div>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-7xl md:text-9xl lg:text-[12rem] font-black mb-8 leading-none"
-          >
-            <span className="block text-white">100</span>
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 text-transparent bg-clip-text">
-              YEARS
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto mb-12 leading-relaxed"
-          >
-            Scroll through a century of innovation, resilience, and excellence
-          </motion.p>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex flex-col items-center gap-4"
+            transition={{ duration: 2 }}
+            className="relative"
           >
-            <div className="text-white/40 text-sm uppercase tracking-widest">Scroll to explore</div>
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <svg className="w-6 h-10 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </motion.div>
+            <h1 className="text-[18vw] lg:text-[14rem] font-black leading-none tracking-tighter text-white/5 absolute -top-1/2 left-1/2 -translate-x-1/2 select-none">
+              CENTURY
+            </h1>
+            <h2 className="text-8xl md:text-[10rem] lg:text-[13rem] font-black mb-8 leading-none tracking-tight">
+              <span className="block text-white mb-2">A Legacy in</span>
+              <span className="block bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-500 text-transparent bg-clip-text italic font-serif py-4">
+                Excellence
+              </span>
+            </h2>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.8 }}
+            className="text-xl md:text-2xl text-white/40 max-w-2xl mx-auto mb-16 font-light leading-relaxed"
+          >
+            Journey through <span className="text-white font-medium">100 years</span> of pioneering heritage and the evolution of global packaging intelligence.
+          </motion.p>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="absolute bottom-[-15vh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-6"
+          >
+            <span className="text-[10px] text-white/30 uppercase tracking-[0.4em] font-bold">Discover The History</span>
+            <div className="w-px h-24 bg-gradient-to-b from-emerald-500 to-transparent relative">
+              <motion.div
+                className="absolute top-0 left-[-2px] w-[5px] h-[5px] bg-white rounded-full"
+                animate={{ top: ['0%', '100%'], opacity: [0, 1, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -338,47 +355,50 @@ export default function CentenaryPage() {
       ))}
 
       {/* Final CTA Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-black">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black py-40">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.1)_0%,transparent_70%)]" />
+          {/* Dust/Stars effect */}
+          <div className="absolute inset-0 opacity-20" style={{
             backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
-            backgroundSize: '50px 50px',
+            backgroundSize: '80px 80px',
           }} />
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-6xl md:text-8xl font-black text-white mb-8">
-              What's Next?
+            <h2 className="text-[12vw] lg:text-[10rem] font-black text-white mb-2 leading-none tracking-tighter">
+              Legacy <br /> <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 text-transparent bg-clip-text italic font-serif py-2 block">Continued</span>
             </h2>
-            <p className="text-2xl text-white/60 mb-12 leading-relaxed">
-              Join us as we continue building the future of sustainable packaging
+            <p className="text-2xl text-white/40 mb-16 leading-relaxed font-light max-w-2xl mx-auto">
+              A century of foundations. A future built on <span className="text-white font-medium">sustained intelligence</span> and uncompromising quality.
             </p>
 
-            <div className="flex flex-wrap gap-6 justify-center">
+            <div className="flex flex-wrap gap-8 justify-center items-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 px-12 py-6 bg-white text-black rounded-full font-bold text-lg shadow-2xl hover:shadow-white/20 transition-all group"
+                  className="inline-flex items-center gap-4 px-14 py-7 bg-white text-black rounded-[2rem] font-black text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-emerald-500/20 transition-all group"
                 >
-                  Get in Touch
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  Start The Next Century
+                  <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
               </motion.div>
-              
+
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-3 px-12 py-6 border-2 border-white/30 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                  className="inline-flex items-center gap-4 px-12 py-7 border border-white/10 text-white rounded-[2rem] font-bold text-xl hover:bg-white/5 transition-all backdrop-blur-xl group"
                 >
-                  Our Products
+                  Explore Solutions
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 opacity-40 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </motion.div>
             </div>
@@ -390,147 +410,120 @@ export default function CentenaryPage() {
 }
 
 // Milestone Section Component - Each takes full viewport
-function MilestoneSection({ 
-  milestone, 
+function MilestoneSection({
+  milestone,
   index
-}: { 
+}: {
   milestone: Milestone
   index: number
 }) {
   const sectionRef = useRef<HTMLDivElement>(null)
-  
+
   const { scrollYProgress: sectionProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
   })
 
-  const opacity = useTransform(sectionProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
-  const scale = useTransform(sectionProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8])
-  const y = useTransform(sectionProgress, [0, 0.3, 0.7, 1], [100, 0, 0, -100])
+  // Entrance/Exit Parallax
+  const opacity = useTransform(sectionProgress, [0, 0.4, 0.6, 1], [0, 1, 1, 0])
+  const scale = useTransform(sectionProgress, [0, 0.4, 0.6, 1], [0.95, 1, 1, 0.95])
+  const y = useTransform(sectionProgress, [0, 0.4, 0.6, 1], [100, 0, 0, -100])
+
+  // Image Parallax
+  const imageY = useTransform(sectionProgress, [0, 1], [-100, 100])
 
   return (
     <section
       id={`milestone-${index}`}
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center py-32"
+      className={`relative min-h-screen flex items-center justify-center py-40 border-b border-white/[0.03] overflow-hidden`}
     >
-      {/* Background with gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${milestone.gradient} opacity-5`} />
-      
       <motion.div
         style={{ opacity, scale, y }}
         className="relative z-10 max-w-7xl mx-auto px-6 w-full"
       >
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
           {/* Content Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}
-          >
-            {/* Year Badge */}
+          <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} relative z-20`}>
+            {/* Year with decorative ring */}
+            <div className="relative inline-block mb-12">
+              <motion.div
+                className={`absolute -inset-8 rounded-full border border-emerald-500/20`}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="relative text-7xl md:text-9xl font-black text-white/10 select-none">
+                {milestone.year}
+              </div>
+              <div className={`absolute top-1/2 left-0 -translate-y-1/2 text-5xl md:text-6xl font-black text-white`}>
+                {milestone.year}
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500 mb-4">{milestone.subtitle}</h4>
+                <h3 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-none mb-6">
+                  {milestone.title}
+                </h3>
+              </div>
+
+              <p className="text-2xl text-white/50 font-light leading-relaxed italic border-l-2 border-emerald-500/30 pl-8">
+                {milestone.description}
+              </p>
+
+              <div className="flex flex-wrap gap-3 pt-4">
+                {milestone.achievements.map((achievement: string, i: number) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-[13px] text-white/70 font-bold uppercase tracking-wider"
+                  >
+                    {achievement}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Visual Side */}
+          <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} relative`}>
+            {/* Parallax Image Card */}
             <motion.div
-              className="inline-block mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              style={{ y: imageY }}
+              className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/10 bg-white/5"
             >
-              <div className={`px-8 py-4 bg-gradient-to-r ${milestone.gradient} rounded-2xl shadow-2xl`}>
-                <div className="text-6xl font-black text-white">{milestone.year}</div>
+              <Image
+                src={milestone.image}
+                alt={milestone.title}
+                fill
+                className="object-cover scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent`} />
+
+              {/* Content Badge */}
+              <div className="absolute bottom-10 left-10 p-8 bg-white/10 backdrop-blur-3xl border border-white/10 rounded-3xl max-w-[280px]">
+                <div className="text-[10px] font-black text-emerald-400 mb-2 uppercase tracking-widest">Historical Context</div>
+                <div className="text-lg font-bold text-white leading-tight">Preserving the standard of global big bag transport.</div>
+              </div>
+
+              {/* Index Number */}
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 flex items-center justify-center text-xl font-black text-white">
+                {String(index + 1).padStart(2, '0')}
               </div>
             </motion.div>
 
-            {/* Subtitle */}
-            <div className="text-white/40 text-sm uppercase tracking-widest mb-4 font-semibold">
-              {milestone.subtitle}
-            </div>
-
-            {/* Title */}
-            <h3 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-              {milestone.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-xl text-white/60 leading-relaxed mb-8">
-              {milestone.description}
-            </p>
-
-            {/* Achievements */}
-            <div className="flex flex-wrap gap-3">
-              {milestone.achievements.map((achievement: string, i: number) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="px-5 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl text-white/80 font-medium hover:bg-white/10 transition-all"
-                >
-                  {achievement}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Visual Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className={index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}
-          >
-            <div className="relative">
-              {/* Decorative Glow */}
-              <motion.div
-                className={`absolute -inset-4 bg-gradient-to-r ${milestone.gradient} rounded-3xl blur-3xl opacity-20`}
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.2, 0.3, 0.2],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-
-              {/* Image Card */}
-              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={milestone.image}
-                    alt={milestone.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${milestone.gradient} opacity-20`} />
-                </div>
-              </div>
-
-              {/* Floating Number */}
-              <motion.div
-                className="absolute -top-8 -right-8 w-24 h-24 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center"
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <span className="text-2xl font-bold text-white">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-              </motion.div>
-            </div>
-          </motion.div>
+            {/* Floating Background Element */}
+            <motion.div
+              className={`absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500/10 blur-3xl rounded-full`}
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity }}
+            />
+          </div>
         </div>
       </motion.div>
     </section>
